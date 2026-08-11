@@ -16,4 +16,6 @@ export interface WebhookEventRecord {
 
 export interface WebhookRepositoryPort {
   save(event: Partial<WebhookEventRecord>): Promise<{ inserted: boolean; id: string }>;
+  findById(id: string): Promise<WebhookEventRecord | null>;
+  update(id: string, patch: Partial<WebhookEventRecord>): Promise<void>;
 }

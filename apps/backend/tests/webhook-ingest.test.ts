@@ -42,6 +42,8 @@ describe('E3-T3: POST /webhooks/meta/:metaAppId Raw Body, HMAC Verification, Ing
         storedEvents.set(dedupeKey, record);
         return { inserted: true, id: record.id };
       }),
+      findById: vi.fn().mockResolvedValue(null),
+      update: vi.fn().mockResolvedValue(undefined),
     };
 
     mockQueuePort = {
