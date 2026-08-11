@@ -3,5 +3,8 @@
     "appName": "NusaCall",
     "welcome": "Selamat datang di NusaCall",
     "login": "Masuk"
+  },
+  "phoneNumbers": {
+    "title": "Kelola Nomor WhatsApp"
   }
 }

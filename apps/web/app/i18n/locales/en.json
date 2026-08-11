@@ -3,5 +3,8 @@
     "appName": "NusaCall",
     "welcome": "Welcome to NusaCall",
     "login": "Login"
+  },
+  "phoneNumbers": {
+    "title": "Manage WhatsApp Numbers"
   }
 }

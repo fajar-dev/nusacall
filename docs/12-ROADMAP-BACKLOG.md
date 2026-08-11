@@ -80,7 +80,7 @@
   DoD: 8 test validasi negatif (entri > 2/hari, tumpang tindih, open ≥ close, libur > 20, tanggal lampau, dst.).
 - [x] **E2-T7** Uji koneksi + sinkronisasi settings + job terjadwal 6 jam.
 - [x] **E2-T8** Guard: nomor dengan `sip.status = ENABLED` tidak dapat dipakai; nomor `RESTRICTED` memblokir panggilan keluar.
-- [ ] **E2-T9** Frontend `/admin/phone-numbers` + detail (editor jam operasional, diff sebelum apply, banner restriction).
+- [x] **E2-T9** Frontend `/admin/phone-numbers` + detail (editor jam operasional, diff sebelum apply, banner restriction).
   DoD: E2E ubah jam operasional termasuk kasus validasi gagal.
 
 ---
