@@ -76,7 +76,7 @@
 - [x] **E2-T4** Klien Graph API (`infrastructure/meta/`) sesuai checklist `03-WHATSAPP-CALLING-SPEC.md` §13.
   DoD: test dengan MSW untuk sukses, 4xx (tanpa retry), 5xx (retry), timeout.
 - [x] **E2-T5** Skema Zod seluruh payload Meta + contract test terhadap fixture.
-- [ ] **E2-T6** `GET/PUT` calling settings + validasi lokal lengkap (§3.2).
+- [x] **E2-T6** `GET/PUT` calling settings + validasi lokal lengkap (§3.2).
   DoD: 8 test validasi negatif (entri > 2/hari, tumpang tindih, open ≥ close, libur > 20, tanggal lampau, dst.).
 - [ ] **E2-T7** Uji koneksi + sinkronisasi settings + job terjadwal 6 jam.
 - [ ] **E2-T8** Guard: nomor dengan `sip.status = ENABLED` tidak dapat dipakai; nomor `RESTRICTED` memblokir panggilan keluar.
