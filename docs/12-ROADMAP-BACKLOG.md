@@ -38,7 +38,7 @@
 - [x] **E0-T7** Koneksi TypeORM (`synchronize: false`) + skrip migration + `Clock` service.
 - [x] **E0-T8** Koneksi Redis + BullMQ setup + registrasi queue kosong.
 - [x] **E0-T9** Adapter object storage S3/MinIO (`StoragePort` + implementasi).
-- [ ] **E0-T10** `apps/web` Nuxt 4 + Mantine Vue + Tabler + Pinia + i18n (id/en) + layout `auth`/`default`.
+- [x] **E0-T10** `apps/web` Nuxt 4 + Mantine Vue + Tabler + Pinia + i18n (id/en) + layout `auth`/`default`.
   DoD: halaman kosong ter-render, tema kustom aktif.
 - [ ] **E0-T11** `packages/contracts` & `packages/ws-protocol` dengan skema Zod dasar.
 - [ ] **E0-T12** Dockerfile backend & web (multi-stage) + `docker-compose.dev.yml` lengkap sesuai `10-DEVOPS-DOCKER.md` §2.

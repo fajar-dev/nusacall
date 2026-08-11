@@ -2,11 +2,35 @@
   "name": "@nusacall/web",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "build": "echo 'web build'",
-    "dev": "echo 'web dev'",
-    "lint": "echo 'web lint'",
-    "typecheck": "echo 'web typecheck'",
-    "test": "echo 'web test'"
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint 'app/**/*.{ts,js}' --no-error-on-unmatched-pattern",
+    "typecheck": "vue-tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@mantine-vue/core": "^3.0.0",
+    "@nuxtjs/i18n": "^8.3.0",
+    "@pinia/nuxt": "^0.5.0",
+    "@tabler/icons-vue": "^3.12.0",
+    "@vueuse/core": "^10.11.0",
+    "@vueuse/nuxt": "^10.11.0",
+    "nuxt": "^3.12.4",
+    "pinia": "^2.2.0",
+    "vue": "^3.4.0",
+    "vue-router": "^4.4.0"
+  },
+  "devDependencies": {
+    "@nusacall/eslint-config": "workspace:*",
+    "@types/node": "^22.0.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.5.0",
+    "vitest": "^2.0.0",
+    "vue-tsc": "^2.0.0"
   }
 }

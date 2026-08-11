@@ -1,0 +1,17 @@
+:root {
+  --nc-color-brand: #0f7b6c;
+  --nc-color-brand-hover: #0c6558;
+  --nc-color-danger: #c92a2a;
+  --nc-color-warning: #e8590c;
+  --nc-color-success: #2b8a3e;
+  --nc-color-info: #1971c2;
+  --nc-radius: 10px;
+  --nc-font: 'Inter', system-ui, -apple-system, sans-serif;
+  --nc-font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--nc-font);
+}
