@@ -33,7 +33,7 @@
   DoD: unit test untuk env valid & tidak valid.
 - [x] **E0-T5** Logging pino + `correlationId` via AsyncLocalStorage + redaksi field sensitif.
   DoD: test membuktikan `password`, `sdp`, `accessToken` teredaksi.
-- [ ] **E0-T6** Hierarki `AppError` + middleware `errorHandler` sesuai `05-BACKEND-API-SPEC.md` §1.2.
+- [x] **E0-T6** Hierarki `AppError` + middleware `errorHandler` sesuai `05-BACKEND-API-SPEC.md` §1.2.
   DoD: test untuk setiap kode HTTP yang dipetakan.
 - [ ] **E0-T7** Koneksi TypeORM (`synchronize: false`) + skrip migration + `Clock` service.
 - [ ] **E0-T8** Koneksi Redis + BullMQ setup + registrasi queue kosong.
