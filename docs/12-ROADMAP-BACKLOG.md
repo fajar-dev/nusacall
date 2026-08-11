@@ -29,7 +29,7 @@
   DoD: pelanggaran batas layer benar-benar gagal saat lint (buktikan dengan test fixture).
 - [x] **E0-T3** Buat `apps/backend` dengan Hono + `@hono/node-server`, entry `main.ts` yang membaca `APP_ROLE`.
   DoD: `GET /health/live` mengembalikan 200.
-- [ ] **E0-T4** `bootstrap/config.ts` — validasi env dengan Zod, gagal start bila tidak valid.
+- [x] **E0-T4** `bootstrap/config.ts` — validasi env dengan Zod, gagal start bila tidak valid.
   DoD: unit test untuk env valid & tidak valid.
 - [ ] **E0-T5** Logging pino + `correlationId` via AsyncLocalStorage + redaksi field sensitif.
   DoD: test membuktikan `password`, `sdp`, `accessToken` teredaksi.
