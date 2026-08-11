@@ -87,7 +87,7 @@
 
 ## E3 — Ingest webhook
 
-- [ ] **E3-T1** Migration `CreateWebhookAndOutbox` (`webhook_events`, `domain_events`).
+- [x] **E3-T1** Migration `CreateWebhookAndOutbox` (`webhook_events`, `domain_events`).
 - [ ] **E3-T2** `GET /webhooks/meta/:metaAppId` verifikasi `hub.challenge` (timing-safe).
 - [ ] **E3-T3** `POST /webhooks/meta/:metaAppId`: raw body → verifikasi HMAC → simpan → enqueue → 200.
   DoD: test signature valid/invalid/absen; test duplikat hanya menghasilkan satu job; test p95 < 300 ms.
