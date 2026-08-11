@@ -32,3 +32,5 @@ export function parseConfig(env: Record<string, unknown> = process.env): Config 
   }
   return result.data;
 }
+
+export const config: Config = parseConfig();

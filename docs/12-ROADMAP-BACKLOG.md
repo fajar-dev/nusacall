@@ -35,7 +35,7 @@
   DoD: test membuktikan `password`, `sdp`, `accessToken` teredaksi.
 - [x] **E0-T6** Hierarki `AppError` + middleware `errorHandler` sesuai `05-BACKEND-API-SPEC.md` §1.2.
   DoD: test untuk setiap kode HTTP yang dipetakan.
-- [ ] **E0-T7** Koneksi TypeORM (`synchronize: false`) + skrip migration + `Clock` service.
+- [x] **E0-T7** Koneksi TypeORM (`synchronize: false`) + skrip migration + `Clock` service.
 - [ ] **E0-T8** Koneksi Redis + BullMQ setup + registrasi queue kosong.
 - [ ] **E0-T9** Adapter object storage S3/MinIO (`StoragePort` + implementasi).
 - [ ] **E0-T10** `apps/web` Nuxt 4 + Mantine Vue + Tabler + Pinia + i18n (id/en) + layout `auth`/`default`.
