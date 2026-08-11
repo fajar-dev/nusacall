@@ -1,0 +1,12 @@
+{
+  "name": "@nusacall/contracts",
+  "version": "0.1.0",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "build": "echo 'contracts build'",
+    "lint": "echo 'contracts lint'",
+    "typecheck": "echo 'contracts typecheck'",
+    "test": "echo 'contracts test'"
+  }
+}

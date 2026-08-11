@@ -23,7 +23,7 @@
 
 ## E0 — Fondasi proyek
 
-- [ ] **E0-T1** Inisialisasi monorepo pnpm + Turborepo sesuai `02-ARCHITECTURE.md` §4.
+- [x] **E0-T1** Inisialisasi monorepo pnpm + Turborepo sesuai `02-ARCHITECTURE.md` §4.
   DoD: `pnpm install` sukses, `turbo run build` jalan pada workspace kosong.
 - [ ] **E0-T2** Konfigurasi TypeScript, ESLint (termasuk `eslint-plugin-boundaries`), Prettier, husky + lint-staged, commitlint.
   DoD: pelanggaran batas layer benar-benar gagal saat lint (buktikan dengan test fixture).

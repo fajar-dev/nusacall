@@ -1,0 +1,12 @@
+{
+  "name": "@nusacall/ws-protocol",
+  "version": "0.1.0",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "build": "echo 'ws-protocol build'",
+    "lint": "echo 'ws-protocol lint'",
+    "typecheck": "echo 'ws-protocol typecheck'",
+    "test": "echo 'ws-protocol test'"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "@nusacall/web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "echo 'web build'",
+    "dev": "echo 'web dev'",
+    "lint": "echo 'web lint'",
+    "typecheck": "echo 'web typecheck'",
+    "test": "echo 'web test'"
+  }
+}

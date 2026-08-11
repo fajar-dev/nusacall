@@ -1,0 +1,12 @@
+{
+  "name": "@nusacall/backend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "echo 'backend build'",
+    "dev": "echo 'backend dev'",
+    "lint": "echo 'backend lint'",
+    "typecheck": "echo 'backend typecheck'",
+    "test": "echo 'backend test'"
+  }
+}
