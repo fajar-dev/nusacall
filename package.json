@@ -10,7 +10,11 @@
     "test": "turbo run test",
     "test:int": "turbo run test:int",
     "test:e2e": "turbo run test:e2e",
-    "verify": "pnpm lint && pnpm typecheck && pnpm test",
+    "verify": "pnpm lint && pnpm typecheck && pnpm test && pnpm test:int",
+    "migration:generate": "pnpm --filter backend migration:generate",
+    "migration:run": "pnpm --filter backend migration:run",
+    "migration:revert": "pnpm --filter backend migration:revert",
+    "seed": "pnpm --filter backend seed",
     "prepare": "husky || true"
   },
   "devDependencies": {
