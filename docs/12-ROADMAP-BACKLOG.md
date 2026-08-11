@@ -58,7 +58,7 @@
   DoD: test reuse token mencabut seluruh family.
 - [x] **E1-T4** Middleware `auth`, `tenant`, `requirePermission` + matriks RBAC (`08-SECURITY-COMPLIANCE.md` §3).
 - [x] **E1-T5** TOTP 2FA (setup, enable, disable, recovery codes).
-- [ ] **E1-T6** Rate limit login + lockout.
+- [x] **E1-T6** Rate limit login + lockout.
 - [ ] **E1-T7** Audit log service + pencatatan otomatis aksi sensitif.
 - [ ] **E1-T8** CRUD organisasi (PO) & pengaturan organisasi (OA).
 - [ ] **E1-T9** CRUD user + reset password + kelola sesi.

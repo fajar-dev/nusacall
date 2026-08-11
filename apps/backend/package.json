@@ -39,9 +39,11 @@
     "@nusacall/eslint-config": "workspace:*",
     "@testcontainers/mysql": "^10.11.0",
     "@testcontainers/redis": "^10.11.0",
+    "@types/ioredis-mock": "^8.2.8",
     "@types/node": "^22.0.0",
     "@types/qrcode": "^1.5.6",
     "eslint": "^8.57.0",
+    "ioredis-mock": "^8.13.1",
     "tsx": "^4.16.0",
     "typescript": "^5.5.0",
     "vitest": "^2.0.0"
