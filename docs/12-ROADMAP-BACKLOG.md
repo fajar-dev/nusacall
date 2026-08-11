@@ -31,7 +31,7 @@
   DoD: `GET /health/live` mengembalikan 200.
 - [x] **E0-T4** `bootstrap/config.ts` — validasi env dengan Zod, gagal start bila tidak valid.
   DoD: unit test untuk env valid & tidak valid.
-- [ ] **E0-T5** Logging pino + `correlationId` via AsyncLocalStorage + redaksi field sensitif.
+- [x] **E0-T5** Logging pino + `correlationId` via AsyncLocalStorage + redaksi field sensitif.
   DoD: test membuktikan `password`, `sdp`, `accessToken` teredaksi.
 - [ ] **E0-T6** Hierarki `AppError` + middleware `errorHandler` sesuai `05-BACKEND-API-SPEC.md` §1.2.
   DoD: test untuk setiap kode HTTP yang dipetakan.
