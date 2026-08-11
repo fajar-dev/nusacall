@@ -73,7 +73,7 @@
 - [x] **E2-T2** `SecretCipher` (AES-256-GCM, multi-key, rotasi) + `TokenResolver`.
   DoD: test enkripsi/dekripsi, rotasi kunci, dan bahwa nilai plaintext tidak pernah ter-log.
 - [x] **E2-T3** CRUD Meta App, WABA, nomor (token write-only di API).
-- [ ] **E2-T4** Klien Graph API (`infrastructure/meta/`) sesuai checklist `03-WHATSAPP-CALLING-SPEC.md` §13.
+- [x] **E2-T4** Klien Graph API (`infrastructure/meta/`) sesuai checklist `03-WHATSAPP-CALLING-SPEC.md` §13.
   DoD: test dengan MSW untuk sukses, 4xx (tanpa retry), 5xx (retry), timeout.
 - [ ] **E2-T5** Skema Zod seluruh payload Meta + contract test terhadap fixture.
 - [ ] **E2-T6** `GET/PUT` calling settings + validasi lokal lengkap (§3.2).
