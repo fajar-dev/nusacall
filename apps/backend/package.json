@@ -3,10 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "echo 'backend build'",
+    "build": "tsc --noEmit",
     "dev": "echo 'backend dev'",
-    "lint": "echo 'backend lint'",
-    "typecheck": "echo 'backend typecheck'",
-    "test": "echo 'backend test'"
+    "lint": "eslint 'src/**/*.{ts,js}' --ignore-pattern '**/Invalid*.ts'",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@nusacall/eslint-config": "workspace:*",
+    "eslint": "^8.57.0",
+    "typescript": "^5.5.0",
+    "vitest": "^2.0.0"
   }
 }

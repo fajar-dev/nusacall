@@ -2,6 +2,16 @@
   "name": "@nusacall/eslint-config",
   "version": "0.1.0",
   "main": "./index.js",
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-boundaries": "^5.0.0"
+  },
+  "peerDependencies": {
+    "eslint": "^8.57.0 || ^9.0.0"
+  },
   "scripts": {
     "build": "echo 'eslint-config build'",
     "lint": "echo 'eslint-config lint'",
