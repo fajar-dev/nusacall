@@ -45,7 +45,7 @@
   DoD: `docker compose up` menjalankan semua service dalam keadaan healthy.
 - [x] **E0-T13** Setup Vitest (unit + integration dengan Testcontainers) dan Playwright.
 - [x] **E0-T14** GitHub Actions `ci.yml` sesuai `10-DEVOPS-DOCKER.md` §6.
-- [ ] **E0-T15** OpenAPI (`@hono/zod-openapi` + Scalar) di `/api/docs`.
+- [x] **E0-T15** OpenAPI (`@hono/zod-openapi` + Scalar) di `/api/docs`.
 
 ---
 
