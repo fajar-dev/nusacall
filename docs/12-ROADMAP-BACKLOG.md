@@ -37,7 +37,7 @@
   DoD: test untuk setiap kode HTTP yang dipetakan.
 - [x] **E0-T7** Koneksi TypeORM (`synchronize: false`) + skrip migration + `Clock` service.
 - [x] **E0-T8** Koneksi Redis + BullMQ setup + registrasi queue kosong.
-- [ ] **E0-T9** Adapter object storage S3/MinIO (`StoragePort` + implementasi).
+- [x] **E0-T9** Adapter object storage S3/MinIO (`StoragePort` + implementasi).
 - [ ] **E0-T10** `apps/web` Nuxt 4 + Mantine Vue + Tabler + Pinia + i18n (id/en) + layout `auth`/`default`.
   DoD: halaman kosong ter-render, tema kustom aktif.
 - [ ] **E0-T11** `packages/contracts` & `packages/ws-protocol` dengan skema Zod dasar.
