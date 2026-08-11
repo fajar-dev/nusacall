@@ -1,0 +1,70 @@
+name: nusacall
+
+services:
+  mysql:
+    image: mysql:8.0
+    command: >
+      --character-set-server=utf8mb4
+      --collation-server=utf8mb4_0900_ai_ci
+      --default-time-zone=+00:00
+      --ngram_token_size=2
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-rootpass}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-nusacall}
+      MYSQL_USER: ${MYSQL_USER:-nusacall}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-nusacall}
+    ports: ['3306:3306']
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./docker/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ['CMD', 'mysqladmin', 'ping', '-h', 'localhost', '-p${MYSQL_ROOT_PASSWORD:-rootpass}']
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  redis:
+    image: redis:7-alpine
+    command: redis-server --appendonly yes
+    ports: ['6379:6379']
+    volumes: ['redis-data:/data']
+    healthcheck:
+      test: ['CMD', 'redis-cli', 'ping']
+      interval: 5s
+      retries: 20
+
+  minio:
+    image: minio/minio
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${S3_ACCESS_KEY:-minioadmin}
+      MINIO_ROOT_PASSWORD: ${S3_SECRET_KEY:-minioadmin}
+    ports: ['9000:9000', '9001:9001']
+    volumes: ['minio-data:/data']
+    healthcheck:
+      test: ['CMD', 'mc', 'ready', 'local']
+      interval: 5s
+      retries: 20
+
+  minio-init:
+    image: minio/mc
+    depends_on: { minio: { condition: service_healthy } }
+    entrypoint: >
+      /bin/sh -c "
+      mc alias set local http://minio:9000 ${S3_ACCESS_KEY:-minioadmin} ${S3_SECRET_KEY:-minioadmin} &&
+      mc mb --ignore-existing local/${S3_BUCKET:-nusacall-media} &&
+      mc anonymous set none local/${S3_BUCKET:-nusacall-media}"
+
+  adminer:
+    image: adminer
+    ports: ['8080:8080']
+    depends_on: [mysql]
+
+  mailpit:
+    image: axllent/mailpit
+    ports: ['8025:8025', '1025:1025']
+
+volumes:
+  mysql-data: {}
+  redis-data: {}
+  minio-data: {}
