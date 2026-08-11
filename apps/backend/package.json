@@ -9,6 +9,7 @@
     "lint": "eslint 'src/**/*.{ts,js}' --ignore-pattern '**/Invalid*.ts'",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
+    "test:int": "vitest run --config vitest.config.int.ts",
     "typeorm": "typeorm-ts-node-commonjs",
     "migration:run": "typeorm-ts-node-commonjs migration:run -d src/infrastructure/database/data-source.ts",
     "migration:revert": "typeorm-ts-node-commonjs migration:revert -d src/infrastructure/database/data-source.ts",
@@ -30,6 +31,8 @@
   },
   "devDependencies": {
     "@nusacall/eslint-config": "workspace:*",
+    "@testcontainers/mysql": "^10.11.0",
+    "@testcontainers/redis": "^10.11.0",
     "@types/node": "^22.0.0",
     "eslint": "^8.57.0",
     "tsx": "^4.16.0",

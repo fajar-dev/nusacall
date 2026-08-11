@@ -43,7 +43,7 @@
 - [x] **E0-T11** `packages/contracts` & `packages/ws-protocol` dengan skema Zod dasar.
 - [x] **E0-T12** Dockerfile backend & web (multi-stage) + `docker-compose.dev.yml` lengkap sesuai `10-DEVOPS-DOCKER.md` §2.
   DoD: `docker compose up` menjalankan semua service dalam keadaan healthy.
-- [ ] **E0-T13** Setup Vitest (unit + integration dengan Testcontainers) dan Playwright.
+- [x] **E0-T13** Setup Vitest (unit + integration dengan Testcontainers) dan Playwright.
 - [ ] **E0-T14** GitHub Actions `ci.yml` sesuai `10-DEVOPS-DOCKER.md` §6.
 - [ ] **E0-T15** OpenAPI (`@hono/zod-openapi` + Scalar) di `/api/docs`.
 
