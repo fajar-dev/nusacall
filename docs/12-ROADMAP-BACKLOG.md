@@ -70,7 +70,7 @@
 ## E2 — Akun Meta, WABA & nomor
 
 - [x] **E2-T1** Migration `CreateMetaAccounts`.
-- [ ] **E2-T2** `SecretCipher` (AES-256-GCM, multi-key, rotasi) + `TokenResolver`.
+- [x] **E2-T2** `SecretCipher` (AES-256-GCM, multi-key, rotasi) + `TokenResolver`.
   DoD: test enkripsi/dekripsi, rotasi kunci, dan bahwa nilai plaintext tidak pernah ter-log.
 - [ ] **E2-T3** CRUD Meta App, WABA, nomor (token write-only di API).
 - [ ] **E2-T4** Klien Graph API (`infrastructure/meta/`) sesuai checklist `03-WHATSAPP-CALLING-SPEC.md` §13.
