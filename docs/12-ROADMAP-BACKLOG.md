@@ -54,7 +54,7 @@
 - [x] **E1-T1** Migration `CreateTenancyAndIdentity` (`organizations`, `users`, `refresh_tokens`, `audit_logs`).
 - [x] **E1-T2** Domain & repository `Organization`, `User` + `TenantScopedRepository` (`04-DATA-MODEL.md` §3).
   DoD: test isolasi tenant negatif.
-- [ ] **E1-T3** Use case autentikasi: login (Argon2id), refresh dengan rotasi + deteksi reuse, logout, logout-all.
+- [x] **E1-T3** Use case autentikasi: login (Argon2id), refresh dengan rotasi + deteksi reuse, logout, logout-all.
   DoD: test reuse token mencabut seluruh family.
 - [ ] **E1-T4** Middleware `auth`, `tenant`, `requirePermission` + matriks RBAC (`08-SECURITY-COMPLIANCE.md` §3).
 - [ ] **E1-T5** TOTP 2FA (setup, enable, disable, recovery codes).
