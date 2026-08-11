@@ -57,7 +57,7 @@
 - [x] **E1-T3** Use case autentikasi: login (Argon2id), refresh dengan rotasi + deteksi reuse, logout, logout-all.
   DoD: test reuse token mencabut seluruh family.
 - [x] **E1-T4** Middleware `auth`, `tenant`, `requirePermission` + matriks RBAC (`08-SECURITY-COMPLIANCE.md` §3).
-- [ ] **E1-T5** TOTP 2FA (setup, enable, disable, recovery codes).
+- [x] **E1-T5** TOTP 2FA (setup, enable, disable, recovery codes).
 - [ ] **E1-T6** Rate limit login + lockout.
 - [ ] **E1-T7** Audit log service + pencatatan otomatis aksi sensitif.
 - [ ] **E1-T8** CRUD organisasi (PO) & pengaturan organisasi (OA).
