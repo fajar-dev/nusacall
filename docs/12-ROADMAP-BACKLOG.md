@@ -89,7 +89,7 @@
 
 - [x] **E3-T1** Migration `CreateWebhookAndOutbox` (`webhook_events`, `domain_events`).
 - [x] **E3-T2** `GET /webhooks/meta/:metaAppId` verifikasi `hub.challenge` (timing-safe).
-- [ ] **E3-T3** `POST /webhooks/meta/:metaAppId`: raw body → verifikasi HMAC → simpan → enqueue → 200.
+- [x] **E3-T3** `POST /webhooks/meta/:metaAppId`: raw body → verifikasi HMAC → simpan → enqueue → 200.
   DoD: test signature valid/invalid/absen; test duplikat hanya menghasilkan satu job; test p95 < 300 ms.
 - [ ] **E3-T4** Worker `webhook.process` + router field (`calls`, `messages`, `account_update`, `account_settings_update`, `message_template_status_update`) + resolusi tenant dari WABA/PNID.
 - [ ] **E3-T5** Retry backoff + DLQ + endpoint replay manual.
