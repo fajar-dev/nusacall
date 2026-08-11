@@ -27,7 +27,7 @@
   DoD: `pnpm install` sukses, `turbo run build` jalan pada workspace kosong.
 - [x] **E0-T2** Konfigurasi TypeScript, ESLint (termasuk `eslint-plugin-boundaries`), Prettier, husky + lint-staged, commitlint.
   DoD: pelanggaran batas layer benar-benar gagal saat lint (buktikan dengan test fixture).
-- [ ] **E0-T3** Buat `apps/backend` dengan Hono + `@hono/node-server`, entry `main.ts` yang membaca `APP_ROLE`.
+- [x] **E0-T3** Buat `apps/backend` dengan Hono + `@hono/node-server`, entry `main.ts` yang membaca `APP_ROLE`.
   DoD: `GET /health/live` mengembalikan 200.
 - [ ] **E0-T4** `bootstrap/config.ts` — validasi env dengan Zod, gagal start bila tidak valid.
   DoD: unit test untuk env valid & tidak valid.
