@@ -60,7 +60,7 @@
 - [x] **E1-T5** TOTP 2FA (setup, enable, disable, recovery codes).
 - [x] **E1-T6** Rate limit login + lockout.
 - [x] **E1-T7** Audit log service + pencatatan otomatis aksi sensitif.
-- [ ] **E1-T8** CRUD organisasi (PO) & pengaturan organisasi (OA).
+- [x] **E1-T8** CRUD organisasi (PO) & pengaturan organisasi (OA).
 - [ ] **E1-T9** CRUD user + reset password + kelola sesi.
 - [ ] **E1-T10** Frontend: halaman login (+2FA), guard route berbasis permission, store `auth`, halaman `/admin/users`.
   DoD: E2E login → akses halaman sesuai peran; peran tanpa izin mendapat 403.
