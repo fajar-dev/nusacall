@@ -94,7 +94,7 @@
 - [x] **E3-T4** Worker `webhook.process` + router field (`calls`, `messages`, `account_update`, `account_settings_update`, `message_template_status_update`) + resolusi tenant dari WABA/PNID.
 - [x] **E3-T5** Retry backoff + DLQ + endpoint replay manual.
 - [x] **E3-T6** Handler `account_settings_update` & `account_update` (violation/restriction) + notifikasi.
-- [ ] **E3-T7** Outbox `domain_events` + poller publikasi.
+- [x] **E3-T7** Outbox `domain_events` + poller publikasi.
 - [ ] **E3-T8** Job retensi `webhook_events` 30 hari.
 
 ---
