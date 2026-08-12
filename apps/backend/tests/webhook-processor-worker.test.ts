@@ -93,16 +93,30 @@ describe('E3-T4: Worker webhook.process, tenant resolution & field router', () =
     expect(sampleEvent.lastError).toContain('Unknown field router');
   });
 
-  it('should mark event status as FAILED and rethrow error when handler fails', async () => {
+  it('should mark event status as PENDING on retry attempt when handler fails before maxAttempts', async () => {
     const onCallsEvent = vi.fn().mockRejectedValue(new Error('Handler crashed'));
     const worker = new WebhookProcessorWorker(mockWebhookRepo, mockTenantResolver, {
       onCallsEvent,
-    });
+    }, 5);
 
     await expect(worker.processJob({ webhookEventId: sampleEvent.id })).rejects.toThrow('Handler crashed');
 
-    expect(sampleEvent.status).toBe('FAILED');
+    expect(sampleEvent.status).toBe('PENDING');
     expect(sampleEvent.attempts).toBe(1);
     expect(sampleEvent.lastError).toBe('Handler crashed');
+  });
+
+  it('should mark event status as FAILED when maxAttempts reached', async () => {
+    sampleEvent.attempts = 4;
+    const onCallsEvent = vi.fn().mockRejectedValue(new Error('Handler crashed repeatedly'));
+    const worker = new WebhookProcessorWorker(mockWebhookRepo, mockTenantResolver, {
+      onCallsEvent,
+    }, 5);
+
+    await expect(worker.processJob({ webhookEventId: sampleEvent.id })).rejects.toThrow('Handler crashed repeatedly');
+
+    expect(sampleEvent.status).toBe('FAILED');
+    expect(sampleEvent.attempts).toBe(5);
+    expect(sampleEvent.lastError).toBe('Handler crashed repeatedly');
   });
 });

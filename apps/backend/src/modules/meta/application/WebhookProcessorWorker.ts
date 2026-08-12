@@ -10,11 +10,16 @@ export interface WebhookFieldHandlers {
 }
 
 export class WebhookProcessorWorker {
+  private readonly maxAttempts: number;
+
   constructor(
     private readonly webhookRepository: WebhookRepositoryPort,
     private readonly tenantResolver: TenantResolverPort,
-    private readonly fieldHandlers: WebhookFieldHandlers = {}
-  ) {}
+    private readonly fieldHandlers: WebhookFieldHandlers = {},
+    maxAttempts = 5
+  ) {
+    this.maxAttempts = maxAttempts;
+  }
 
   async processJob(jobData: { webhookEventId: string }): Promise<void> {
     const { webhookEventId } = jobData;
@@ -78,9 +83,12 @@ export class WebhookProcessorWorker {
       });
     } catch (err: unknown) {
       const errorMessage = err instanceof Error ? err.message : String(err);
+      const newAttempts = event.attempts + 1;
+      const finalStatus = newAttempts >= this.maxAttempts ? 'FAILED' : 'PENDING';
+
       await this.webhookRepository.update(event.id, {
-        status: 'FAILED',
-        attempts: event.attempts + 1,
+        status: finalStatus,
+        attempts: newAttempts,
         lastError: errorMessage,
       });
       throw err;
