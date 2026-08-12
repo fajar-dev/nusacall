@@ -104,7 +104,7 @@
 - [x] **E4-T1** Migration `CreateContactsAndPermissions` & `CreateRoutingAndAgents`.
 - [x] **E4-T2** Domain kontak + resolusi otomatis dari webhook (`wa_id`, `profile.name`) + normalisasi E.164.
 - [x] **E4-T3** CRUD skill, antrian, `queue_skills`, `agent_queues`, `agent_skills`.
-- [ ] **E4-T4** `routing_rules` + `RoutingResolver` (prioritas, payload equals/prefix/regex, fallback default queue).
+- [x] **E4-T4** `routing_rules` + `RoutingResolver` (prioritas, payload equals/prefix/regex, fallback default queue).
   DoD: test tabel keputusan lengkap + endpoint `/routing-rules/simulate`.
 - [ ] **E4-T5** `entry_point_payloads` CRUD + pemetaan payload → antrian.
 - [ ] **E4-T6** Frontend `/admin/queues`, `/admin/skills`, halaman routing + simulator.
