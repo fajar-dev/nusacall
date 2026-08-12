@@ -102,7 +102,7 @@
 ## E4 — Kontak & routing dasar
 
 - [x] **E4-T1** Migration `CreateContactsAndPermissions` & `CreateRoutingAndAgents`.
-- [ ] **E4-T2** Domain kontak + resolusi otomatis dari webhook (`wa_id`, `profile.name`) + normalisasi E.164.
+- [x] **E4-T2** Domain kontak + resolusi otomatis dari webhook (`wa_id`, `profile.name`) + normalisasi E.164.
 - [ ] **E4-T3** CRUD skill, antrian, `queue_skills`, `agent_queues`, `agent_skills`.
 - [ ] **E4-T4** `routing_rules` + `RoutingResolver` (prioritas, payload equals/prefix/regex, fallback default queue).
   DoD: test tabel keputusan lengkap + endpoint `/routing-rules/simulate`.
