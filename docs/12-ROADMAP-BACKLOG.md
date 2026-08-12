@@ -118,7 +118,7 @@
   DoD: integration test dua instance — pesan ke user yang terhubung di instance lain tetap sampai.
 - [x] **E5-T3** `packages/ws-protocol`: seluruh tipe pesan `06-REALTIME-WEBRTC-SPEC.md` §2 + validasi Zod.
 - [x] **E5-T4** Handler `client.hello`, `client.resync`, `agent.set_status`, ping/pong.
-- [ ] **E5-T5** Frontend `WsClient` (reconnect backoff + jitter, deduplikasi id, resync) + store `ws`.
+- [x] **E5-T5** Frontend `WsClient` (reconnect backoff + jitter, deduplikasi id, resync) + store `ws`.
 - [ ] **E5-T6** UI kartu status agent + `POST /me/agent-state`.
   DoD: E2E ubah status, tutup tab → agent `OFFLINE` dalam ≤ 30 detik.
 

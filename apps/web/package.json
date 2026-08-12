@@ -16,6 +16,8 @@
   },
   "dependencies": {
     "@mantine-vue/core": "^3.0.0",
+    "@nusacall/contracts": "workspace:*",
+    "@nusacall/ws-protocol": "workspace:*",
     "@nuxtjs/i18n": "^8.3.0",
     "@pinia/nuxt": "^0.5.0",
     "@tabler/icons-vue": "^3.12.0",
