@@ -20,6 +20,8 @@
     "@aws-sdk/s3-request-presigner": "^3.620.0",
     "@hono/node-server": "^1.12.0",
     "@hono/zod-openapi": "^0.16.0",
+    "@nusacall/contracts": "workspace:*",
+    "@nusacall/ws-protocol": "workspace:*",
     "@scalar/hono-api-reference": "^0.5.0",
     "argon2": "^0.45.1",
     "bullmq": "^5.12.0",
