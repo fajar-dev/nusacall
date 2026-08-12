@@ -113,7 +113,7 @@
 
 ## E5 — Status agent & WebSocket gateway
 
-- [ ] **E5-T1** `AgentStateStore` berbasis Redis (`agent:{userId}`) + replikasi asinkron ke `agent_status_events`.
+- [x] **E5-T1** `AgentStateStore` berbasis Redis (`agent:{userId}`) + replikasi asinkron ke `agent_status_events`.
 - [ ] **E5-T2** WS gateway: upgrade, token WS sekali pakai, registry Redis lintas instance, heartbeat, backpressure.
   DoD: integration test dua instance — pesan ke user yang terhubung di instance lain tetap sampai.
 - [ ] **E5-T3** `packages/ws-protocol`: seluruh tipe pesan `06-REALTIME-WEBRTC-SPEC.md` §2 + validasi Zod.
