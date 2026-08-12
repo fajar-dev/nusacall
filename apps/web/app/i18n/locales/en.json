@@ -6,5 +6,25 @@
   },
   "phoneNumbers": {
     "title": "Manage WhatsApp Numbers"
+  },
+  "queues": {
+    "title": "Queue Management",
+    "name": "Queue Name",
+    "strategy": "Distribution Strategy",
+    "timeout": "Timeout (seconds)"
+  },
+  "skills": {
+    "title": "Agent Skill Management",
+    "name": "Skill Name",
+    "description": "Description"
+  },
+  "routing": {
+    "title": "Routing Rules & Simulator",
+    "priority": "Priority",
+    "field": "Match Field",
+    "operator": "Operator",
+    "value": "Match Value",
+    "targetQueue": "Target Queue",
+    "simulate": "Simulate Routing"
   }
 }

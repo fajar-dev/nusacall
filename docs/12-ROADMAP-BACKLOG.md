@@ -107,7 +107,7 @@
 - [x] **E4-T4** `routing_rules` + `RoutingResolver` (prioritas, payload equals/prefix/regex, fallback default queue).
   DoD: test tabel keputusan lengkap + endpoint `/routing-rules/simulate`.
 - [x] **E4-T5** `entry_point_payloads` CRUD + pemetaan payload → antrian.
-- [ ] **E4-T6** Frontend `/admin/queues`, `/admin/skills`, halaman routing + simulator.
+- [x] **E4-T6** Frontend `/admin/queues`, `/admin/skills`, halaman routing + simulator.
 
 ---
 
