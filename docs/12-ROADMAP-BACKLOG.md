@@ -95,7 +95,7 @@
 - [x] **E3-T5** Retry backoff + DLQ + endpoint replay manual.
 - [x] **E3-T6** Handler `account_settings_update` & `account_update` (violation/restriction) + notifikasi.
 - [x] **E3-T7** Outbox `domain_events` + poller publikasi.
-- [ ] **E3-T8** Job retensi `webhook_events` 30 hari.
+- [x] **E3-T8** Job retensi `webhook_events` 30 hari.
 
 ---
 

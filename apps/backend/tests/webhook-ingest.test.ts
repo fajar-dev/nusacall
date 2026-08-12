@@ -44,6 +44,7 @@ describe('E3-T3: POST /webhooks/meta/:metaAppId Raw Body, HMAC Verification, Ing
       }),
       findById: vi.fn().mockResolvedValue(null),
       update: vi.fn().mockResolvedValue(undefined),
+      deleteOlderThan: vi.fn().mockResolvedValue(0),
     };
 
     mockQueuePort = {

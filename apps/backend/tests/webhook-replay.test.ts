@@ -37,6 +37,7 @@ describe('E3-T5: Webhook Replay & DLQ Strategy', () => {
           Object.assign(sampleEvent, patch);
         }
       }),
+      deleteOlderThan: vi.fn().mockResolvedValue(0),
     };
 
     mockQueue = {

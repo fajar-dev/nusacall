@@ -36,6 +36,7 @@ describe('E3-T4: Worker webhook.process, tenant resolution & field router', () =
           Object.assign(sampleEvent, patch);
         }
       }),
+      deleteOlderThan: vi.fn().mockResolvedValue(0),
     };
 
     mockTenantResolver = {
