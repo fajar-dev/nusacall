@@ -18,7 +18,7 @@ export class CreateMetaAndWabaSchema1754910000000 implements MigrationInterface 
         UNIQUE INDEX \`uk_meta_apps_meta_app_id\` (\`meta_app_id\`),
         INDEX \`idx_meta_apps_org_id\` (\`organization_id\`),
         CONSTRAINT \`fk_meta_apps_organization\` FOREIGN KEY (\`organization_id\`) REFERENCES \`organizations\` (\`id\`) ON DELETE CASCADE
-      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
     `);
 
     await queryRunner.query(`
@@ -38,7 +38,7 @@ export class CreateMetaAndWabaSchema1754910000000 implements MigrationInterface 
         INDEX \`idx_waba_meta_app_id\` (\`meta_app_id\`),
         CONSTRAINT \`fk_waba_organization\` FOREIGN KEY (\`organization_id\`) REFERENCES \`organizations\` (\`id\`) ON DELETE CASCADE,
         CONSTRAINT \`fk_waba_meta_app\` FOREIGN KEY (\`meta_app_id\`) REFERENCES \`meta_apps\` (\`id\`) ON DELETE CASCADE
-      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
     `);
 
     await queryRunner.query(`
@@ -71,7 +71,7 @@ export class CreateMetaAndWabaSchema1754910000000 implements MigrationInterface 
         INDEX \`idx_pn_waba_id\` (\`waba_id\`),
         CONSTRAINT \`fk_pn_organization\` FOREIGN KEY (\`organization_id\`) REFERENCES \`organizations\` (\`id\`) ON DELETE CASCADE,
         CONSTRAINT \`fk_pn_waba\` FOREIGN KEY (\`waba_id\`) REFERENCES \`whatsapp_business_accounts\` (\`id\`) ON DELETE CASCADE
-      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
     `);
   }
 

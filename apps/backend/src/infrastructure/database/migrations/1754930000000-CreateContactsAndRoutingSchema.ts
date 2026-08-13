@@ -18,7 +18,7 @@ export class CreateContactsAndRoutingSchema1754930000000 implements MigrationInt
         UNIQUE KEY idx_contacts_org_wa (organization_id, wa_id),
         INDEX idx_contacts_org_phone (organization_id, phone_number),
         CONSTRAINT fk_contacts_org FOREIGN KEY (organization_id) REFERENCES organizations(id) ON DELETE CASCADE
-      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
     `);
 
     await queryRunner.query(`
@@ -32,7 +32,7 @@ export class CreateContactsAndRoutingSchema1754930000000 implements MigrationInt
         PRIMARY KEY (id),
         UNIQUE KEY idx_skills_org_name (organization_id, name),
         CONSTRAINT fk_skills_org FOREIGN KEY (organization_id) REFERENCES organizations(id) ON DELETE CASCADE
-      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
     `);
 
     await queryRunner.query(`
@@ -48,7 +48,7 @@ export class CreateContactsAndRoutingSchema1754930000000 implements MigrationInt
         PRIMARY KEY (id),
         UNIQUE KEY idx_queues_org_name (organization_id, name),
         CONSTRAINT fk_queues_org FOREIGN KEY (organization_id) REFERENCES organizations(id) ON DELETE CASCADE
-      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
     `);
 
     await queryRunner.query(`
@@ -58,7 +58,7 @@ export class CreateContactsAndRoutingSchema1754930000000 implements MigrationInt
         PRIMARY KEY (queue_id, skill_id),
         CONSTRAINT fk_qs_queue FOREIGN KEY (queue_id) REFERENCES queues(id) ON DELETE CASCADE,
         CONSTRAINT fk_qs_skill FOREIGN KEY (skill_id) REFERENCES skills(id) ON DELETE CASCADE
-      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
     `);
 
     await queryRunner.query(`
@@ -68,7 +68,7 @@ export class CreateContactsAndRoutingSchema1754930000000 implements MigrationInt
         PRIMARY KEY (user_id, queue_id),
         CONSTRAINT fk_aq_user FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
         CONSTRAINT fk_aq_queue FOREIGN KEY (queue_id) REFERENCES queues(id) ON DELETE CASCADE
-      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
     `);
 
     await queryRunner.query(`
@@ -79,7 +79,7 @@ export class CreateContactsAndRoutingSchema1754930000000 implements MigrationInt
         PRIMARY KEY (user_id, skill_id),
         CONSTRAINT fk_as_user FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
         CONSTRAINT fk_as_skill FOREIGN KEY (skill_id) REFERENCES skills(id) ON DELETE CASCADE
-      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
     `);
 
     await queryRunner.query(`
@@ -96,7 +96,7 @@ export class CreateContactsAndRoutingSchema1754930000000 implements MigrationInt
         CONSTRAINT fk_epp_org FOREIGN KEY (organization_id) REFERENCES organizations(id) ON DELETE CASCADE,
         CONSTRAINT fk_epp_phone FOREIGN KEY (phone_number_id) REFERENCES wa_phone_numbers(id) ON DELETE CASCADE,
         CONSTRAINT fk_epp_queue FOREIGN KEY (target_queue_id) REFERENCES queues(id) ON DELETE CASCADE
-      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
     `);
 
     await queryRunner.query(`
@@ -115,7 +115,7 @@ export class CreateContactsAndRoutingSchema1754930000000 implements MigrationInt
         INDEX idx_rr_org_priority (organization_id, priority),
         CONSTRAINT fk_rr_org FOREIGN KEY (organization_id) REFERENCES organizations(id) ON DELETE CASCADE,
         CONSTRAINT fk_rr_queue FOREIGN KEY (target_queue_id) REFERENCES queues(id) ON DELETE CASCADE
-      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
     `);
   }
 

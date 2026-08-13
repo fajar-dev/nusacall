@@ -1,4 +1,16 @@
 import { z } from 'zod';
+import { existsSync } from 'node:fs';
+import { resolve } from 'node:path';
+
+// Attempt to load .env file if available (Node 22 native support)
+const rootEnvPath = resolve(__dirname, '../../../../.env');
+if (existsSync(rootEnvPath) && typeof process.loadEnvFile === 'function') {
+  try {
+    process.loadEnvFile(rootEnvPath);
+  } catch {
+    // Ignore error if env file is already loaded
+  }
+}
 
 export const configSchema = z.object({
   NODE_ENV: z.enum(['development', 'test', 'production']).default('development'),
@@ -9,8 +21,8 @@ export const configSchema = z.object({
   // Database
   DATABASE_HOST: z.string().default('localhost'),
   DATABASE_PORT: z.coerce.number().default(3306),
-  DATABASE_USER: z.string().default('root'),
-  DATABASE_PASSWORD: z.string().default('secret'),
+  DATABASE_USER: z.string().default('nusacall'),
+  DATABASE_PASSWORD: z.string().default('nusacall'),
   DATABASE_NAME: z.string().default('nusacall'),
 
   // Redis
@@ -25,7 +37,18 @@ export const configSchema = z.object({
 export type Config = z.infer<typeof configSchema>;
 
 export function parseConfig(env: Record<string, unknown> = process.env): Config {
-  const result = configSchema.safeParse(env);
+  const mergedEnv = {
+    ...env,
+    DATABASE_HOST: env.DATABASE_HOST || env.DB_HOST || 'localhost',
+    DATABASE_PORT: env.DATABASE_PORT || env.MYSQL_PORT || env.DB_PORT || 3306,
+    DATABASE_USER: env.DATABASE_USER || env.DB_USER || 'nusacall',
+    DATABASE_PASSWORD: env.DATABASE_PASSWORD || env.DB_PASSWORD || 'nusacall',
+    DATABASE_NAME: env.DATABASE_NAME || env.DB_NAME || 'nusacall',
+    REDIS_HOST: env.REDIS_HOST || 'localhost',
+    REDIS_PORT: env.REDIS_PORT || 6379,
+  };
+
+  const result = configSchema.safeParse(mergedEnv);
   if (!result.success) {
     const errors = result.error.format();
     throw new Error(`Invalid environment variables: ${JSON.stringify(errors)}`);

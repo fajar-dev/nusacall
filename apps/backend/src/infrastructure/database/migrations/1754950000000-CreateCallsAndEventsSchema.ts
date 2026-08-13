@@ -46,7 +46,7 @@ export class CreateCallsAndEventsSchema1754950000000 implements MigrationInterfa
         INDEX idx_calls_org_queue_created (organization_id, queue_id, created_at),
         INDEX idx_calls_org_agent_created (organization_id, assigned_agent_id, created_at),
         INDEX idx_calls_contact_created (contact_id, created_at)
-      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
     `);
 
     await queryRunner.query(`
@@ -64,7 +64,7 @@ export class CreateCallsAndEventsSchema1754950000000 implements MigrationInterfa
         PRIMARY KEY (id),
         UNIQUE KEY uq_call_events_seq (call_id, sequence),
         INDEX idx_call_events_org_call (organization_id, call_id)
-      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
     `);
 
     await queryRunner.query(`
@@ -89,7 +89,7 @@ export class CreateCallsAndEventsSchema1754950000000 implements MigrationInterfa
         PRIMARY KEY (id),
         UNIQUE KEY uq_call_recordings_call (call_id),
         INDEX idx_call_recordings_org (organization_id, status)
-      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
     `);
 
     await queryRunner.query(`
@@ -115,7 +115,7 @@ export class CreateCallsAndEventsSchema1754950000000 implements MigrationInterfa
         PRIMARY KEY (id),
         UNIQUE KEY uq_call_transcripts_call (call_id),
         INDEX idx_call_transcripts_org (organization_id, status)
-      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
     `);
 
     await queryRunner.query(`
@@ -135,7 +135,7 @@ export class CreateCallsAndEventsSchema1754950000000 implements MigrationInterfa
         PRIMARY KEY (id),
         UNIQUE KEY uq_transcript_segments_idx (call_transcript_id, segment_index),
         INDEX idx_transcript_segments_org (organization_id, call_transcript_id)
-      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
     `);
   }
 

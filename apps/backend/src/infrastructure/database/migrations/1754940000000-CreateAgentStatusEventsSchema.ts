@@ -16,7 +16,7 @@ export class CreateAgentStatusEventsSchema1754940000000 implements MigrationInte
         INDEX idx_ase_org_user (organization_id, user_id, created_at),
         CONSTRAINT fk_ase_org FOREIGN KEY (organization_id) REFERENCES organizations(id) ON DELETE CASCADE,
         CONSTRAINT fk_ase_user FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
-      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
     `);
   }
 
