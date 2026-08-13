@@ -38,10 +38,10 @@ describe('E5-T3: WS Protocol Envelope & Payload Zod Schemas', () => {
     expect(hello.appVersion).toBe('1.0.0');
 
     const status = AgentSetStatusPayloadSchema.parse({
-      status: 'ONLINE',
+      status: 'AVAILABLE',
       reason: 'Available',
     });
-    expect(status.status).toBe('ONLINE');
+    expect(status.status).toBe('AVAILABLE');
   });
 
   it('should validate CallOffer and CallAccepted server payload schemas', () => {

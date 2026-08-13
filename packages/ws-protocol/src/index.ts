@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const AgentStatusEnum = z.enum(['ONLINE', 'BUSY', 'WRAP_UP', 'OFFLINE']);
+export const AgentStatusEnum = z.enum(['AVAILABLE', 'ONLINE', 'RINGING', 'ON_CALL', 'WRAP_UP', 'BREAK', 'BUSY', 'OFFLINE']);
 export type AgentStatus = z.infer<typeof AgentStatusEnum>;
 
 export const WsMessageTypeSchema = z.enum([

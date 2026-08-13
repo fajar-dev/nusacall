@@ -19,7 +19,8 @@ export class AgentStateStore implements AgentStateStorePort {
   async setAgentState(userId: string, organizationId: string, status: AgentStatusType, reason?: string): Promise<AgentStateRecord> {
     if (!userId) throw new ValidationError('userId wajib diisi');
     if (!organizationId) throw new ValidationError('organizationId wajib diisi');
-    if (!['ONLINE', 'BUSY', 'WRAP_UP', 'OFFLINE'].includes(status)) {
+    const validStatuses = ['AVAILABLE', 'ONLINE', 'RINGING', 'ON_CALL', 'WRAP_UP', 'BREAK', 'BUSY', 'OFFLINE'];
+    if (!validStatuses.includes(status)) {
       throw new ValidationError(`Status agent tidak valid: ${status}`);
     }
 
@@ -27,7 +28,7 @@ export class AgentStateStore implements AgentStateStorePort {
       userId,
       organizationId,
       status,
-      reason,
+      ...(reason ? { reason } : {}),
       updatedEpochMs: this.clock.now().getTime(),
     };
 
@@ -42,7 +43,7 @@ export class AgentStateStore implements AgentStateStorePort {
           organizationId,
           userId,
           status,
-          reason,
+          ...(reason ? { reason } : {}),
         })
         .catch(() => {
           // Ignore async logging errors
@@ -74,7 +75,7 @@ export class AgentStateStore implements AgentStateStorePort {
       if (raw) {
         try {
           const rec = JSON.parse(raw) as AgentStateRecord;
-          if (rec.organizationId === organizationId && rec.status === 'ONLINE') {
+          if (rec.organizationId === organizationId && (rec.status === 'AVAILABLE' || rec.status === 'ONLINE')) {
             onlineAgents.push(rec);
           }
         } catch {

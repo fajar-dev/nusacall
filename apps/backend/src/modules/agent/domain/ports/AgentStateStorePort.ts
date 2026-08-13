@@ -1,4 +1,4 @@
-export type AgentStatusType = 'ONLINE' | 'BUSY' | 'WRAP_UP' | 'OFFLINE';
+export type AgentStatusType = 'AVAILABLE' | 'ONLINE' | 'RINGING' | 'ON_CALL' | 'WRAP_UP' | 'BREAK' | 'BUSY' | 'OFFLINE';
 
 export interface AgentStateRecord {
   userId: string;
@@ -8,6 +8,14 @@ export interface AgentStateRecord {
   updatedEpochMs: number;
 }
 
+export interface AgentStatusEventRecord {
+  id: string;
+  organizationId: string;
+  userId: string;
+  status: AgentStatusType;
+  reason?: string | undefined;
+}
+
 export interface AgentStateStorePort {
   setAgentState(userId: string, organizationId: string, status: AgentStatusType, reason?: string): Promise<AgentStateRecord>;
   getAgentState(userId: string): Promise<AgentStateRecord | null>;
@@ -15,5 +23,5 @@ export interface AgentStateStorePort {
 }
 
 export interface AgentStatusEventRepositoryPort {
-  appendEvent(event: { id: string; organizationId: string; userId: string; status: AgentStatusType; reason?: string | undefined }): Promise<void>;
+  appendEvent(event: AgentStatusEventRecord): Promise<void>;
 }
