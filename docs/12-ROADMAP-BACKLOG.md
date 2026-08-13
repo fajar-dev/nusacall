@@ -142,7 +142,7 @@
 
 ## E7 — Softphone browser (WebRTC)
 
-- [ ] **E7-T1** `lib/webrtc/sdp.ts` — `mungeSdp` + util parser murni.
+- [x] **E7-T1** `lib/webrtc/sdp.ts` — `mungeSdp` + util parser murni.
   DoD: unit test §5.7 `09-TESTING-STRATEGY.md` termasuk idempotensi dan baris yang tidak boleh berubah.
 - [ ] **E7-T2** `PeerConnectionManager` (inbound & outbound, vanilla ICE, tanpa renegotiation, `close()` idempoten).
   DoD: test dengan `RTCPeerConnection` palsu; mic tidak aktif sebelum `enableMic()`.
