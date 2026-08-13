@@ -160,9 +160,9 @@
 
 ## E8 — Panggilan masuk end-to-end (MILESTONE KRITIS)
 
-- [ ] **E8-T1** ACD minimal: pilih agent `AVAILABLE` pertama yang cocok, kirim `call.offer`, tangani timeout & penolakan, coba kandidat berikutnya.
-- [ ] **E8-T2** Rangkai alur penuh sesuai `03-WHATSAPP-CALLING-SPEC.md` §10.
-- [ ] **E8-T3** Integration test alur lengkap (12 skenario `09-TESTING-STRATEGY.md` §5.2).
+- [x] **E8-T1** ACD minimal: pilih agent `AVAILABLE` pertama yang cocok, kirim `call.offer`, tangani timeout & penolakan, coba kandidat berikutnya.
+- [x] **E8-T2** Rangkai alur penuh sesuai `03-WHATSAPP-CALLING-SPEC.md` §10.
+- [x] **E8-T3** Integration test alur lengkap (12 skenario `09-TESTING-STRATEGY.md` §5.2).
 - [ ] **E8-T4** E2E Playwright dengan echo peer lokal + fake media device.
 - [ ] **E8-T5** **Uji manual dengan nomor test Meta sungguhan** — panggilan masuk dari HP, audio dua arah, terminate bersih.
   DoD: bukti rekaman layar + log `call_events` lengkap dilampirkan di PR.
