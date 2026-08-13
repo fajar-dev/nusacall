@@ -48,6 +48,7 @@ export class PreAcceptCall {
       phoneNumberId: call.waPhoneNumberId,
       callId: call.wacid,
       sdpAnswer: input.sdpAnswer,
+      bizOpaqueCallbackData: call.id,
     });
 
     // 4. Catat CallEvent

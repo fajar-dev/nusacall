@@ -32,6 +32,16 @@ class InMemoryCallRepository implements CallRepositoryPort {
     }
     return null;
   }
+
+  async findStaleCalls(olderThan: Date): Promise<Call[]> {
+    const result: Call[] = [];
+    for (const call of this.calls.values()) {
+      if ((call.state === 'QUEUED' || call.state === 'RINGING') && call.queuedAt && call.queuedAt <= olderThan) {
+        result.push(call);
+      }
+    }
+    return result;
+  }
 }
 
 describe('E6-T3, E6-T4, E6-T5: Inbound Call Signaling & Use Cases', () => {
@@ -177,6 +187,7 @@ describe('E6-T3, E6-T4, E6-T5: Inbound Call Signaling & Use Cases', () => {
         phoneNumberId: pnid,
         callId: wacid,
         sdpAnswer: 'v=0\r\no=agent_answer...',
+        bizOpaqueCallbackData: call.id,
       });
 
       const cachedSdp = await sdpCache.getAnswerSdp(wacid);
@@ -214,6 +225,7 @@ describe('E6-T3, E6-T4, E6-T5: Inbound Call Signaling & Use Cases', () => {
         phoneNumberId: pnid,
         callId: wacid,
         sdpAnswer: 'v=0\r\no=agent_answer_123',
+        bizOpaqueCallbackData: call.id,
       });
     });
 

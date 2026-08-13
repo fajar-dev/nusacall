@@ -133,10 +133,10 @@
 - [x] **E6-T4** `RedisSdpCache` (`sdp:answer:{wacid}`, TTL 300 detik).
 - [x] **E6-T5** Use case `PreAcceptCall`, `AcceptCall`, `RejectCall`, `TerminateCall`.
   DoD: test bahwa `accept` memakai SDP **identik** dari cache; cache kosong → `SDP_ANSWER_MISSING` + reject.
-- [ ] **E6-T6** Use case `HandleCallTerminateWebhook` (status, start/end/duration, errors) + `HandleCallStatusWebhook`.
-- [ ] **E6-T7** Timeout guard 30 detik (BR-006) + job `calls.stale-sweeper`.
-- [ ] **E6-T8** `biz_opaque_callback_data = call.id` di seluruh request yang mendukungnya.
-- [ ] **E6-T9** Handler WS `call.answer_sdp`, `call.answer`, `call.reject`, `call.hangup`, `call.ice_state`, `call.media_error`.
+- [x] **E6-T6** Use case `HandleCallTerminateWebhook` (status, start/end/duration, errors) + `HandleCallStatusWebhook`.
+- [x] **E6-T7** Timeout guard 30 detik (BR-006) + job `calls.stale-sweeper`.
+- [x] **E6-T8** `biz_opaque_callback_data = call.id` di seluruh request yang mendukungnya.
+- [x] **E6-T9** Handler WS `call.answer_sdp`, `call.answer`, `call.reject`, `call.hangup`, `call.ice_state`, `call.media_error`.
 
 ---
 

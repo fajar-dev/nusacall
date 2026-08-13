@@ -133,4 +133,21 @@ export class Call extends Entity<string> {
   public setAssignedAgentId(agentId: string): void { this.props.assignedAgentId = agentId; }
   public setEndReason(reason: string): void { this.props.endReason = reason; }
   public incrementOfferAttempts(): void { this.props.offerAttempts = (this.props.offerAttempts ?? 0) + 1; }
+
+  public setFirstOfferedAt(date: Date): void { this.props.firstOfferedAt = date; }
+  public setAnsweredAt(date: Date): void { this.props.answeredAt = date; }
+  public setEndedAt(date: Date): void { this.props.endedAt = date; }
+  public setMetaTiming(startTime?: Date, endTime?: Date, durationSeconds?: number): void {
+    if (startTime) this.props.metaStartTime = startTime;
+    if (endTime) this.props.metaEndTime = endTime;
+    if (durationSeconds !== undefined) {
+      this.props.metaDurationSeconds = durationSeconds;
+      this.props.talkSeconds = durationSeconds;
+    }
+  }
+  public setBillablePulses(pulses: number): void { this.props.billablePulses = pulses; }
+  public setError(code: number, message: string): void {
+    this.props.errorCode = code;
+    this.props.errorMessage = message;
+  }
 }

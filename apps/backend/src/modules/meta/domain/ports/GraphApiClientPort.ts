@@ -9,12 +9,14 @@ export interface PreAcceptCallParams {
   phoneNumberId: string;
   callId: string;
   sdpAnswer: string;
+  bizOpaqueCallbackData?: string;
 }
 
 export interface AcceptCallParams {
   phoneNumberId: string;
   callId: string;
   sdpAnswer: string;
+  bizOpaqueCallbackData?: string;
 }
 
 export interface RejectCallParams {

@@ -62,6 +62,7 @@ export class AcceptCall {
       phoneNumberId: call.waPhoneNumberId,
       callId: call.wacid,
       sdpAnswer: cachedSdp,
+      bizOpaqueCallbackData: call.id,
     });
 
     // 4. Transisi state Call ke ACCEPTED

@@ -14,6 +14,15 @@ export interface MinimalWebSocketConnection {
   close(code?: number, reason?: string): void;
 }
 
+export interface CallGatewayHandlers {
+  onAnswerSdp(userId: string, orgId: string, callId: string, sdp: string): Promise<void>;
+  onAnswer(userId: string, orgId: string, callId: string): Promise<void>;
+  onReject(userId: string, orgId: string, callId: string, reason?: string): Promise<void>;
+  onHangup(userId: string, orgId: string, callId: string): Promise<void>;
+  onIceState?(userId: string, orgId: string, callId: string, iceState: string): Promise<void>;
+  onMediaError?(userId: string, orgId: string, callId: string, code: string, message: string): Promise<void>;
+}
+
 export class WsGatewayManager implements LocalConnectionHandlerPort {
   private readonly connections = new Map<string, MinimalWebSocketConnection>();
   private heartbeatInterval: NodeJS.Timeout | null = null;
@@ -22,8 +31,13 @@ export class WsGatewayManager implements LocalConnectionHandlerPort {
   constructor(
     private readonly tokenService: WsTokenService,
     private readonly agentStateStore: AgentStateStorePort,
-    private clusterRegistry?: WsClusterRegistryService
+    private clusterRegistry?: WsClusterRegistryService,
+    private callHandlers?: CallGatewayHandlers
   ) {}
+
+  setCallHandlers(callHandlers: CallGatewayHandlers): void {
+    this.callHandlers = callHandlers;
+  }
 
   setClusterRegistry(clusterRegistry: WsClusterRegistryService): void {
     this.clusterRegistry = clusterRegistry;
@@ -156,6 +170,54 @@ export class WsGatewayManager implements LocalConnectionHandlerPort {
               since: updated.updatedEpochMs,
             },
           });
+        }
+        break;
+      }
+
+      case 'call.answer_sdp': {
+        const payload = envelope.payload as { callId: string; sdp: string };
+        if (payload && payload.callId && payload.sdp && this.callHandlers) {
+          await this.callHandlers.onAnswerSdp(userId, conn.organizationId, payload.callId, payload.sdp);
+        }
+        break;
+      }
+
+      case 'call.answer': {
+        const payload = envelope.payload as { callId: string };
+        if (payload && payload.callId && this.callHandlers) {
+          await this.callHandlers.onAnswer(userId, conn.organizationId, payload.callId);
+        }
+        break;
+      }
+
+      case 'call.reject': {
+        const payload = envelope.payload as { callId: string; reason?: string };
+        if (payload && payload.callId && this.callHandlers) {
+          await this.callHandlers.onReject(userId, conn.organizationId, payload.callId, payload.reason);
+        }
+        break;
+      }
+
+      case 'call.hangup': {
+        const payload = envelope.payload as { callId: string };
+        if (payload && payload.callId && this.callHandlers) {
+          await this.callHandlers.onHangup(userId, conn.organizationId, payload.callId);
+        }
+        break;
+      }
+
+      case 'call.ice_state': {
+        const payload = envelope.payload as { callId: string; iceConnectionState: string };
+        if (payload && payload.callId && this.callHandlers?.onIceState) {
+          await this.callHandlers.onIceState(userId, conn.organizationId, payload.callId, payload.iceConnectionState);
+        }
+        break;
+      }
+
+      case 'call.media_error': {
+        const payload = envelope.payload as { callId: string; code: string; message: string };
+        if (payload && payload.callId && this.callHandlers?.onMediaError) {
+          await this.callHandlers.onMediaError(userId, conn.organizationId, payload.callId, payload.code || 'UNKNOWN', payload.message || '');
         }
         break;
       }

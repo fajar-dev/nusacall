@@ -170,6 +170,7 @@ export class GraphApiClient implements GraphApiClientPort {
           call_id: params.callId,
           action: 'pre_accept',
           sdp: params.sdpAnswer,
+          ...(params.bizOpaqueCallbackData ? { biz_opaque_callback_data: params.bizOpaqueCallbackData } : {}),
         }),
       }
     );
@@ -187,6 +188,7 @@ export class GraphApiClient implements GraphApiClientPort {
           call_id: params.callId,
           action: 'accept',
           sdp: params.sdpAnswer,
+          ...(params.bizOpaqueCallbackData ? { biz_opaque_callback_data: params.bizOpaqueCallbackData } : {}),
         }),
       }
     );

@@ -4,4 +4,5 @@ export interface CallRepositoryPort {
   save(call: Call): Promise<void>;
   findById(organizationId: string, callId: string): Promise<Call | null>;
   findByWacid(wacid: string): Promise<Call | null>;
+  findStaleCalls(olderThan: Date): Promise<Call[]>;
 }
