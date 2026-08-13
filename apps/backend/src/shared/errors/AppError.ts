@@ -45,6 +45,13 @@ export class ConflictError extends AppError {
   }
 }
 
+export class IllegalStateError extends AppError {
+  readonly httpStatus = 409;
+  constructor(code = 'ILLEGAL_STATE_TRANSITION', message = 'Transisi state tidak sah', details?: unknown) {
+    super(code, message, details);
+  }
+}
+
 export class BusinessRuleError extends AppError {
   readonly httpStatus = 422;
   constructor(code = 'BUSINESS_RULE_VIOLATION', message = 'Aturan bisnis dilanggar', details?: unknown) {

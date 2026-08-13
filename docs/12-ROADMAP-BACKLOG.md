@@ -126,12 +126,12 @@
 
 ## E6 — Panggilan masuk: signaling backend
 
-- [ ] **E6-T1** Migration `CreateCallsAndEvents`.
-- [ ] **E6-T2** Domain `Call` + `CallStateMachine` + `CallEvent` (append-only, `sequence`).
+- [x] **E6-T1** Migration `CreateCallsAndEvents`.
+- [x] **E6-T2** Domain `Call` + `CallStateMachine` + `CallEvent` (append-only, `sequence`).
   DoD: test tabel transisi legal/ilegal lengkap.
-- [ ] **E6-T3** Use case `HandleInboundCallConnect`: buat Call `QUEUED`, resolve kontak & antrian, catat `cta_payload`/`deeplink_payload`/`entry_point`.
-- [ ] **E6-T4** `RedisSdpCache` (`sdp:answer:{wacid}`, TTL 300 detik).
-- [ ] **E6-T5** Use case `PreAcceptCall`, `AcceptCall`, `RejectCall`, `TerminateCall`.
+- [x] **E6-T3** Use case `HandleInboundCallConnect`: buat Call `QUEUED`, resolve kontak & antrian, catat `cta_payload`/`deeplink_payload`/`entry_point`.
+- [x] **E6-T4** `RedisSdpCache` (`sdp:answer:{wacid}`, TTL 300 detik).
+- [x] **E6-T5** Use case `PreAcceptCall`, `AcceptCall`, `RejectCall`, `TerminateCall`.
   DoD: test bahwa `accept` memakai SDP **identik** dari cache; cache kosong → `SDP_ANSWER_MISSING` + reject.
 - [ ] **E6-T6** Use case `HandleCallTerminateWebhook` (status, start/end/duration, errors) + `HandleCallStatusWebhook`.
 - [ ] **E6-T7** Timeout guard 30 detik (BR-006) + job `calls.stale-sweeper`.
