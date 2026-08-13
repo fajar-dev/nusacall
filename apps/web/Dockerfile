@@ -7,7 +7,7 @@ COPY package.json pnpm-lock.yaml pnpm-workspace.yaml turbo.json ./
 COPY apps/backend/package.json apps/backend/
 COPY apps/web/package.json apps/web/
 COPY packages/ packages/
-RUN pnpm install --frozen-lockfile
+RUN pnpm install --frozen-lockfile --ignore-scripts
 
 FROM deps AS development
 COPY . .

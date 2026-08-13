@@ -1,0 +1,8 @@
+node_modules
+.git
+.output
+.turbo
+.nuxt
+dist
+coverage
+*.log

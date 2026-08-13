@@ -1,0 +1,30 @@
+{
+  "common": {
+    "appName": "NusaCall",
+    "welcome": "Selamat datang di NusaCall",
+    "login": "Masuk"
+  },
+  "phoneNumbers": {
+    "title": "Kelola Nomor WhatsApp"
+  },
+  "queues": {
+    "title": "Manajemen Antrian",
+    "name": "Nama Antrian",
+    "strategy": "Strategi Distribusi",
+    "timeout": "Batas Waktu (detik)"
+  },
+  "skills": {
+    "title": "Manajemen Skill Agent",
+    "name": "Nama Skill",
+    "description": "Deskripsi"
+  },
+  "routing": {
+    "title": "Aturan Routing & Simulator",
+    "priority": "Prioritas",
+    "field": "Field Match",
+    "operator": "Operator",
+    "value": "Nilai Match",
+    "targetQueue": "Antrian Tujuan",
+    "simulate": "Simulasikan Routing"
+  }
+}

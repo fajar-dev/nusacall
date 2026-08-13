@@ -19,8 +19,7 @@ export default defineNuxtConfig({
       { code: 'id', file: 'id.json', name: 'Indonesia' },
       { code: 'en', file: 'en.json', name: 'English' },
     ],
-    lazy: false,
-    langDir: 'i18n/locales',
+    langDir: 'locales',
     strategy: 'no_prefix',
   },
 });
