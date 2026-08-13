@@ -11,7 +11,10 @@ export const AppDataSource = new DataSource({
   database: config.DATABASE_NAME,
   synchronize: false, // Rule N2: NEVER use synchronize: true
   logging: config.NODE_ENV === 'development',
-  entities: [__dirname + '/../../modules/**/infrastructure/*OrmEntity.{ts,js}'],
+  entities: [
+    __dirname + '/../../modules/**/infrastructure/entities/*.{ts,js}',
+    __dirname + '/../../modules/**/infrastructure/*Entity.{ts,js}',
+  ],
   migrations: [__dirname + '/migrations/*.{ts,js}'],
   subscribers: [],
 });
