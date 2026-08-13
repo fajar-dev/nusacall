@@ -144,17 +144,17 @@
 
 - [x] **E7-T1** `lib/webrtc/sdp.ts` — `mungeSdp` + util parser murni.
   DoD: unit test §5.7 `09-TESTING-STRATEGY.md` termasuk idempotensi dan baris yang tidak boleh berubah.
-- [ ] **E7-T2** `PeerConnectionManager` (inbound & outbound, vanilla ICE, tanpa renegotiation, `close()` idempoten).
+- [x] **E7-T2** `PeerConnectionManager` (inbound & outbound, vanilla ICE, tanpa renegotiation, `close()` idempoten).
   DoD: test dengan `RTCPeerConnection` palsu; mic tidak aktif sebelum `enableMic()`.
-- [ ] **E7-T3** `DeviceManager` (enumerasi, persist pilihan, `replaceTrack` tanpa renegotiation).
-- [ ] **E7-T4** `StatsCollector` + `mos.ts`.
+- [x] **E7-T3** `DeviceManager` (enumerasi, persist pilihan, `replaceTrack` tanpa renegotiation).
+- [x] **E7-T4** `StatsCollector` + `mos.ts`.
   DoD: unit test MOS terhadap nilai referensi.
-- [ ] **E7-T5** `ringtone.ts` berbasis WebAudio (tanpa aset eksternal).
-- [ ] **E7-T6** Store `softphone` dengan state machine `06-...` §6.
+- [x] **E7-T5** `ringtone.ts` berbasis WebAudio (tanpa aset eksternal).
+- [x] **E7-T6** Store `softphone` dengan state machine `06-...` §6.
   DoD: unit test seluruh transisi termasuk jalur error.
-- [ ] **E7-T7** Komponen `SoftphoneDock` untuk state IDLE / RINGING_IN / ON_CALL / WRAP_UP + shortcut keyboard + aksesibilitas.
-- [ ] **E7-T8** Pre-flight check (`06-...` §4.9) sebelum agent boleh `AVAILABLE`.
-- [ ] **E7-T9** Laporan kepatuhan (`iceRole`, `dtlsRole`, codec) dikirim lewat `call.ice_state` dan disimpan di `call_events`.
+- [x] **E7-T7** Komponen `SoftphoneDock` untuk state IDLE / RINGING_IN / ON_CALL / WRAP_UP + shortcut keyboard + aksesibilitas.
+- [x] **E7-T8** Pre-flight check (`06-...` §4.9) sebelum agent boleh `AVAILABLE`.
+- [x] **E7-T9** Laporan kepatuhan (`iceRole`, `dtlsRole`, codec) dikirim lewat `call.ice_state` dan disimpan di `call_events`.
 
 ---
 
