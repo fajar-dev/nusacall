@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import argon2 from 'argon2';
 import { AppDataSource } from '../data-source';
 import { OrganizationEntity } from '../../../modules/identity/infrastructure/entities/OrganizationEntity';
